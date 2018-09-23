@@ -1,0 +1,58 @@
+.notification {
+  display: flex;
+  background: white;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+  font-size: 14px;
+
+  &:hover {
+    background: darken(@light-color, 5%);
+  }
+
+  &--unread {
+    background: @light-color;
+
+    > .notification__border {
+      width: 5px;
+      margin-right: -5px;
+    }
+
+    > .notification__content {
+      margin-left: 0;
+    }
+  }
+}
+
+.notification__content {
+  padding: 15px;
+  max-height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.notification__photo {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin-right: 10px;
+  background: lightgray;
+  flex-shrink: 0;
+}
+
+.notification__border {
+  height: 62px;
+  width: 0;
+  margin-right: 0;
+  flex-shrink: 0;
+  background: @primary-color;
+  transition: width 0.2s ease-out, margin 0.2s ease-out;
+}
+
+.notification__text {
+  color: #888;
+}
+
+.notification__names {
+  font-weight: bold;
+  color: @primary-color;
+}

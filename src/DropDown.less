@@ -1,0 +1,41 @@
+.drop-down {
+  width: 400px;
+  max-height: 0;
+  position: absolute;
+  right: 30px;
+  top: 60px;
+  border: solid 1px @border-color;
+  overflow: scroll;
+  background: white;
+  opacity: 0;
+  transition: max-height 0.2s ease-out, opacity 0.5s ease-out;
+  box-shadow: 2px 2px 4px @border-color;
+
+  &--open {
+    opacity: 1;
+    max-height: 400px;
+  }
+}
+
+.drop-down__item:not(:last-child) {
+  border-bottom: solid 1px @border-color;
+}
+
+@media (max-width: 480px) {
+  .drop-down {
+    left: 0;
+    right: 0;
+    width: 100vw;
+
+    &--open {
+      max-height: 100vh;
+    }
+  }
+}
+
+
+@media (max-height: 460px) and (min-width: 480px) {
+  .drop-down {
+    bottom: 10px
+  }
+}
